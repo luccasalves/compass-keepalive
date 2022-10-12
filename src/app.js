@@ -6,7 +6,8 @@ function App() {
   setTimeout(() => {
     const app = document.querySelector("#app");
     const appStatus = localStorage.getItem("logado");
-    if (appStatus == "true") {
+
+    if (Number(appStatus) === 1) {
       app.appendChild(DashboardPage());
       return app;
     }

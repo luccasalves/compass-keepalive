@@ -12,6 +12,6 @@ export function AuthPage() {
 }
 
 function login() {
-  localStorage.setItem("logado", true);
+  localStorage.setItem("logado", 1);
   location.reload();
 }
