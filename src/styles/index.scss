@@ -1,0 +1,9 @@
+@import "../theme/index.scss";
+@import "./authPage.scss";
+
+.app-init {
+  opacity: 1;
+}
+.app-loading {
+  opacity: 0;
+}

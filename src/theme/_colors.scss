@@ -1,0 +1,17 @@
+:root {
+  --primary: #ca3113;
+  --dark: #1c1d20;
+  --white: #fff;
+  --light: #e0e0e0;
+
+  --text: #8a8b8d;
+  --text-light: var(--light);
+  --text-dark: #222222;
+  --text-primary: #c12d18;
+
+  --bg-gradient: linear-gradient(
+    65deg,
+    rgba(28, 29, 32, 1) 0%,
+    rgba(56, 67, 78, 1) 100%
+  );
+}
