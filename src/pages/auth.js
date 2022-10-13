@@ -6,7 +6,7 @@ export function AuthPage() {
   const authPage = create("main", "auth-page");
   const test = create("h1");
   test.textContent = "oi";
-  authPage.append(ButtonApp("Logar", login));
+  authPage.append(ButtonApp("oi amor", "btn", login));
 
   return authPage;
 }

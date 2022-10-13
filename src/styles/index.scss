@@ -1,5 +1,7 @@
 @import "../theme/index.scss";
 @import "./authPage.scss";
+@import "./dashboard.scss";
+@import "./dash-footer.scss";
 
 input {
   padding: var(--lg);
@@ -39,15 +41,14 @@ input {
 
 body {
   background-color: var(--dark);
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #app {
-  width: 100%;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .app-init {

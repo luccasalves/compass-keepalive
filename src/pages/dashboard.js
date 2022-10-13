@@ -1,19 +1,19 @@
 import { create } from "../utils/dom";
 import { ButtonApp } from "../components/button";
 
-import "../styles/dashboard.scss";
 import { LogoApp } from "../components/logo";
 import { TextApp } from "../components/text";
+import { DashFooter } from "../components/dash-footer";
 
-const textSection = document.createElement("section");
+const dashboardPage = create("main", "dash-page");
+const TextSection = document.createElement("section");
 
-textSection.classList.add("text-section");
+TextSection.classList.add("text-section");
 
 export function DashboardPage() {
-  const dashboardPage = create("main", "dash-page");
   dashboardPage.append(LogoApp());
 
-  textSection.append(
+  TextSection.append(
     TextApp("h1", "heading-3", "Our mission is"),
     TextApp("p", "text", "Nossa missão é"),
     TextApp("h1", "heading-1", "to transform the world"),
@@ -24,7 +24,7 @@ export function DashboardPage() {
     TextApp("p", "text", "que permitam o crescimento dos nossos clientes")
   );
 
-  dashboardPage.append(textSection);
+  dashboardPage.append(TextSection, DashFooter());
 
   return dashboardPage;
 }
