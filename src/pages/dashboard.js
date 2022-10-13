@@ -1,9 +1,8 @@
 import { create } from "../utils/dom";
-import { ButtonApp } from "../components/button";
 
-import { LogoApp } from "../components/logo";
 import { TextApp } from "../components/text";
 import { DashFooter } from "../components/dash-footer";
+import { DashHeader } from "../components/dash-header";
 
 const dashboardPage = create("main", "dash-page");
 const TextSection = document.createElement("section");
@@ -11,8 +10,6 @@ const TextSection = document.createElement("section");
 TextSection.classList.add("text-section");
 
 export function DashboardPage() {
-  dashboardPage.append(LogoApp());
-
   TextSection.append(
     TextApp("h1", "heading-3", "Our mission is"),
     TextApp("p", "text", "Nossa missão é"),
@@ -24,7 +21,7 @@ export function DashboardPage() {
     TextApp("p", "text", "que permitam o crescimento dos nossos clientes")
   );
 
-  dashboardPage.append(TextSection, DashFooter());
+  dashboardPage.append(DashHeader(), TextSection, DashFooter());
 
   return dashboardPage;
 }

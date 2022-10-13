@@ -27,7 +27,7 @@
 
   .text {
     color: var(--text-light);
-    max-width: 600px;
+    max-width: 550px;
     width: 100%;
     text-align: right;
   }
@@ -65,7 +65,16 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1404px) {
+  .dash-footer {
+    .text {
+      max-width: 500px;
+      padding: 10px 40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
   .text-refresh {
     display: none;
   }
@@ -89,5 +98,11 @@
     .btn-logout {
       height: 40px;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .refresh-box {
+    padding: 0 !important;
   }
 }

@@ -39,8 +39,7 @@ export function DashFooter() {
   setInterval(() => {
     counter--;
     seconds.textContent = counter;
-    console.log(counter);
-    console.log(typeof counter);
+
     if (counter == 0) {
       counter = 602;
       alert("logout");

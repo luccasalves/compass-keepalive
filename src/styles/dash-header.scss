@@ -1,0 +1,33 @@
+.clock-app {
+  text-align: center;
+
+  .time-text {
+    font-size: 3.5rem;
+  }
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-box {
+  padding: var(--xl);
+
+  .text {
+    text-align: center;
+  }
+
+  .degree-box {
+    display: flex;
+
+    .icon {
+      width: 30px;
+    }
+    .text-degree {
+      font-size: 3rem;
+      font-weight: 500;
+    }
+  }
+}
