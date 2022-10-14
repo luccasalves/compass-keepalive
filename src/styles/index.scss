@@ -12,6 +12,9 @@ input {
   border: 2px solid var(--light);
   border-radius: var(--xl);
   cursor: pointer;
+  width: 100%;
+
+  font-size: 1.5rem;
 
   &:focus {
     border-color: var(--primary);
@@ -24,8 +27,8 @@ input {
   color: var(--white);
   padding: var(--lg);
   border-radius: var(--xl);
-  width: 200px;
-  font-size: 1.1rem;
+  width: 100%;
+  font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   border: solid 2px transparent;

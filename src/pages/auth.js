@@ -1,12 +1,11 @@
 import { create } from "../utils/dom";
 import "../styles/authPage.scss";
-import { ButtonApp } from "../components/button";
+import { LoginForm } from "../components/login-form";
 
 export function AuthPage() {
   const authPage = create("main", "auth-page");
-  const test = create("h1");
-  test.textContent = "oi";
-  authPage.append(ButtonApp("entrar", "btn", login));
+
+  authPage.append(LoginForm());
 
   return authPage;
 }

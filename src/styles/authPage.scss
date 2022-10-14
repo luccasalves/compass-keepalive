@@ -1,4 +1,36 @@
 .auth-page {
   color: var(--text-light);
   position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper-input {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+  }
+
+  .login-form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.icon {
+  position: relative;
+  left: 20px;
+}
+
+.animation-icon {
+  left: -40px;
 }
