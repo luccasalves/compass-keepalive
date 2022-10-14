@@ -6,7 +6,7 @@ export function DashHeader() {
   const header = document.createElement("header");
   header.classList.add("dash-header");
 
-  header.append(LogoApp(), ClockApp(true), WeatherApp());
+  header.append(LogoApp(), ClockApp(false), WeatherApp());
 
   return header;
 }

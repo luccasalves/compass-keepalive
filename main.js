@@ -10,8 +10,8 @@ loading.setAttribute("class", "app-init");
 setTimeout(() => {
   loading.setAttribute("class", "app-loading");
   App();
-}, 3000);
+}, 1000);
 
 setTimeout(() => {
   appEmpty.removeChild(loading);
-}, 3500);
+}, 1500);

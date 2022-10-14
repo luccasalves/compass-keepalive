@@ -1,10 +1,12 @@
 .btn-cn,
 .btn-logout {
+  height: 100px;
+  width: 100%;
+  padding: 10px;
   background: var(--white);
   color: var(--primary);
   font-size: 1.2rem;
-  height: 130px;
-  width: 100%;
+
   border: none;
   cursor: pointer;
 
@@ -19,91 +21,92 @@
 }
 
 .dash-footer {
+  width: 100%;
   background-color: var(--dark-gray);
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap-reverse;
-
-  .text {
-    color: var(--text-light);
-    max-width: 550px;
-    width: 100%;
-    text-align: right;
-    margin-left: 20px;
-  }
-  .refresh-box {
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-    margin: 0 40px;
-    border-left: 1px solid white;
-
-    .text-refresh {
-      color: var(--text-light);
-      font-size: 1.3rem;
-      margin-right: 40px;
-    }
-
-    .counter-box {
-      color: var(--white);
-      .text-counter {
-        width: 70px;
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 600;
-      }
-
-      .label-counter {
-        font-size: 1.4rem;
-        font-weight: 400;
-      }
-    }
-  }
 
   .actions {
     display: flex;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
   }
-}
 
-@media (max-width: 1404px) {
-  .dash-footer {
-    .text {
-      max-width: 500px;
-      padding: 10px 40px;
+  .refresh-box {
+    max-width: 400px;
+    width: 100%;
+    // background-color: aquamarine;
+    border-left: solid 1px var(--text-light);
+    margin: 10px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    color: var(--text-light);
+
+    .app-refresh-text {
+      font-size: 1.2rem;
+      max-width: 150px;
+      text-align: right;
     }
+
+    .counter-box {
+      text-align: center;
+      width: 130px;
+      .seconds-text {
+        font-size: 3rem;
+        font-weight: 500;
+      }
+      .label-counter {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .window-info {
+    color: var(--text-light);
+    max-width: 700px;
+    width: 100%;
+    text-align: right;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
   }
 }
 
 @media (max-width: 768px) {
-  .text-refresh {
-    display: none;
-  }
-
   .dash-footer {
-    justify-content: space-around !important;
-  }
-  .dash-footer {
-    justify-content: center;
-    .text {
-      width: 100%;
-      margin: 10px;
-      text-align: center;
-    }
-    .refresh-box {
-      padding-left: 0;
-      border-left: none;
-    }
+    flex-wrap: wrap;
 
     .btn-cn,
     .btn-logout {
-      height: 40px;
+      height: 80px;
     }
-  }
-}
 
-@media (max-width: 480px) {
-  .refresh-box {
-    padding: 0 !important;
+    .actions {
+      max-width: 100%;
+    }
+
+    .window-info {
+      max-width: 50% !important;
+      margin: auto;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
+    .refresh-box {
+      max-width: 50%;
+      margin: 10px 0;
+      padding: 0 10px;
+
+      .app-refresh-text {
+        max-width: 100px;
+      }
+    }
   }
 }

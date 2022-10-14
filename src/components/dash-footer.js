@@ -2,47 +2,52 @@ import { ButtonApp } from "./button";
 import { TextApp } from "./text";
 
 export function DashFooter() {
-  let counter = 600;
+  let counter = 11;
   const footer = document.createElement("footer");
   const actions = document.createElement("div");
-  const refreshDiv = document.createElement("div");
+  const refreshInfoBox = document.createElement("div");
   const counterBox = document.createElement("div");
-  const seconds = TextApp("p", "text-counter", counter);
+  const secondsText = document.createElement("p");
+  const windowInfo = document.createElement("div");
 
   footer.classList.add("dash-footer");
+
   actions.classList.add("actions");
-  refreshDiv.classList.add("refresh-box");
+  refreshInfoBox.classList.add("refresh-box");
   counterBox.classList.add("counter-box");
+  secondsText.classList.add("seconds-text");
+  windowInfo.classList.add("window-info");
 
-  counterBox.append(seconds, TextApp("p", "label-counter", "seconds"));
-
-  refreshDiv.append(
-    TextApp("p", "text-refresh", "Application refresh in"),
+  windowInfo.append(
+    TextApp(
+      "p",
+      "info-text",
+      "Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar."
+    )
+  );
+  refreshInfoBox.append(
+    TextApp("p", "app-refresh-text", "Application refresh in"),
     counterBox
   );
+  counterBox.append(secondsText, TextApp("p", "label-counter", "seconds"));
 
   actions.append(
     ButtonApp("Continuar navegando", "btn-cn", handleContinueNav),
     ButtonApp("Logout", "btn-logout", logout)
   );
 
-  footer.append(
-    TextApp(
-      "p",
-      "text",
-      "Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar."
-    ),
-    refreshDiv,
-    actions
-  );
+  footer.append(windowInfo, refreshInfoBox, actions);
 
   setInterval(() => {
     counter--;
-    seconds.textContent = counter;
+    secondsText.textContent = counter;
 
     if (counter == 0) {
-      counter = 602;
-      alert("logout");
+      const res = confirm(
+        "Aperte 'Ok' caso deseje permanecer logado? ou 'cancelar' para sair "
+      );
+
+      res ? (counter = 600) : logout();
     }
   }, 1000);
 
