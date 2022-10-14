@@ -1,18 +1,49 @@
+import axios from "axios";
+import { api } from "../services/axios";
 import { TextApp } from "./text";
-export function WeatherApp() {
-  const weather = document.createElement("div");
-  const degreeBox = document.createElement("div");
-  const degreesText = TextApp("p", "text-degree", "22");
-  const iconWether = document.createElement("img");
 
-  iconWether.setAttribute("src", `./src/assets/icons/sun-dark.svg`);
+const weatherApp = document.createElement("div");
+const degreeBox = document.createElement("div");
+const degreesText = document.createElement("p");
+const iconWether = document.createElement("img");
+const textCondition = document.createElement("p");
+const textLocation = document.createElement("p");
+export function WeatherApp() {
+  getGeolocation();
 
   iconWether.classList.add("icon");
-  weather.classList.add("weather-box");
+  weatherApp.classList.add("weather-box");
   degreeBox.classList.add("degree-box");
 
   degreeBox.append(iconWether, degreesText);
-  weather.append(TextApp("p", "text", "lucas"), degreeBox);
+  weatherApp.append(textLocation, textCondition, degreeBox);
 
-  return weather;
+  return weatherApp;
+}
+
+async function getWether(lat, lon) {
+  let url = `http://api.weatherapi.com/v1/current.json?key=3e756b6080f247079c9125141221310&q=${lat},${lon}&lang=pt`;
+  return await axios.get(url).then((response) => {
+    return {
+      icon: response.data.current.condition.icon,
+      condition: response.data.current.condition.text,
+      tempCelsius: response.data.current.temp_c,
+      region: response.data.location.region,
+      country: response.data.location.country,
+    };
+  });
+}
+
+async function getGeolocation() {
+  navigator.geolocation.getCurrentPosition(async (response) => {
+    const coords = response.coords;
+
+    const weather = await getWether(coords.latitude, coords.longitude);
+    console.log(weather);
+
+    iconWether.setAttribute("src", weather.icon);
+    degreesText.innerText = `${weather.tempCelsius}º`;
+    textCondition.innerText = `${weather.condition}`;
+    textLocation.innerText = `${weather.region}, ${weather.country}`;
+  });
 }

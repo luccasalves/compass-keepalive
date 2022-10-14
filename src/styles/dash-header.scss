@@ -1,3 +1,10 @@
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--xl);
+}
+
 .clock-app {
   text-align: center;
 
@@ -6,15 +13,7 @@
   }
 }
 
-.dash-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .weather-box {
-  padding: var(--xl);
-
   .text {
     text-align: center;
   }
