@@ -2,7 +2,7 @@ import { ButtonApp } from "./button";
 import { TextApp } from "./text";
 
 export function DashFooter() {
-  let counter = 11;
+  let counter = 601;
   const footer = document.createElement("footer");
   const actions = document.createElement("div");
   const refreshInfoBox = document.createElement("div");
@@ -11,7 +11,6 @@ export function DashFooter() {
   const windowInfo = document.createElement("div");
 
   footer.classList.add("dash-footer");
-
   actions.classList.add("actions");
   refreshInfoBox.classList.add("refresh-box");
   counterBox.classList.add("counter-box");
@@ -44,7 +43,7 @@ export function DashFooter() {
 
     if (counter == 0) {
       const res = confirm(
-        "Aperte 'Ok' caso deseje permanecer logado? ou 'cancelar' para sair "
+        `SESSÃO INSPIRADA !\nAperte 'Ok' caso deseje permanecer logado ou 'cancelar' para sair `
       );
 
       res ? (counter = 600) : logout();

@@ -1,8 +1,9 @@
 import { InputApp } from "./input";
 import { ButtonApp } from "./button";
-
+const loginForm = document.createElement("div");
+const msgError = document.createElement("p");
+msgError.classList.add("warning");
 export function LoginForm() {
-  const loginForm = document.createElement("form");
   loginForm.classList.add("login-form");
 
   const inputUsername = InputApp("Usuário", "text", "user", "person");
@@ -11,7 +12,12 @@ export function LoginForm() {
   inputUsername.addEventListener("keyup", () => watchInput("user"));
   inputPass.addEventListener("keyup", () => watchInput("pass"));
 
-  loginForm.append(inputUsername, inputPass, ButtonApp("Entrar", "btn", login));
+  loginForm.append(
+    inputUsername,
+    inputPass,
+    msgError,
+    ButtonApp("Entrar", "btn", login)
+  );
 
   return loginForm;
 }
@@ -19,6 +25,9 @@ export function LoginForm() {
 function watchInput(id) {
   const i = document.querySelector(`#i-${id}`);
   i.classList.add("animation-icon");
+
+  msgError.textContent = "";
+
   if (document.querySelector(`#${id}`).value.length == 0) {
     i.classList.remove("animation-icon");
   }
@@ -28,11 +37,11 @@ function login() {
   const user = document.querySelector(`#user`);
   const pass = document.querySelector(`#pass`);
 
-  if (user.value == "admin" && pass.value == "uol") {
+  if (user.value == "admin" && pass.value == "pass") {
     localStorage.setItem("logado", 1);
     location.reload();
     return;
   }
 
-  alert("credencias erradas");
+  msgError.textContent = "Ops, usuário ou senha inválidos. Tente novamente!";
 }
