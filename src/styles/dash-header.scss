@@ -1,0 +1,52 @@
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px var(--xl);
+  flex-wrap: wrap-reverse;
+}
+
+.clock-app {
+  text-align: center;
+
+  .time-text {
+    font-size: 4.5rem;
+  }
+}
+
+.weather-box {
+  .text {
+    text-align: right;
+  }
+
+  .degree-box {
+    display: flex;
+
+    .degree-text {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .dash-header {
+    .logo {
+      width: 150px;
+    }
+    .weather-box {
+      display: flex;
+      align-items: center;
+      justify-self: end !important;
+      .icon {
+        width: 30px;
+      }
+      .degree-box {
+        .degree-text {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

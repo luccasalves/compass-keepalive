@@ -1,0 +1,74 @@
+@import "../theme/index.scss";
+@import "./authPage.scss";
+@import "./dashboard.scss";
+@import "./dash-header.scss";
+@import "./dash-footer.scss";
+
+input {
+  padding: var(--lg);
+  background-color: transparent;
+  color: var(--text-light);
+  outline: none;
+  border: 2px solid var(--light);
+  border-radius: var(--xl);
+  cursor: pointer;
+  width: 100%;
+
+  font-size: 1.5rem;
+
+  &:focus {
+    border-color: var(--primary);
+    transform: scale(1.05);
+  }
+}
+
+.btn {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--lg);
+  border-radius: var(--xl);
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: solid 2px transparent;
+
+  &:hover {
+    border-color: var(--white);
+    transform: translate(-8px, -8px);
+    box-shadow: var(--primary) 10px 10px 10px;
+  }
+  &:active {
+    transform: translate(8px, 8px);
+  }
+}
+
+body {
+  background-color: var(--dark);
+}
+
+#app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-init {
+  opacity: 1;
+}
+.app-loading {
+  opacity: 0;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}

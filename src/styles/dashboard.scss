@@ -1,0 +1,68 @@
+.dash-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--white);
+
+  background-image: url("../assets/bola-compasso.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  background-position-y: 180px;
+
+  display: flex;
+  justify-content: space-between;
+
+  flex-direction: column;
+
+  .text-section {
+    padding: var(--xl);
+    text-align: right;
+    height: 55vh;
+
+    .text {
+      color: var(--text);
+      font-size: 1.5rem;
+    }
+    .heading {
+      &-1 {
+        color: var(--text-primary);
+        font-size: 3rem;
+        border: 1 solid var(--white);
+      }
+      &-3 {
+        color: var(--text-primary);
+        font-size: 2.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .dash-page {
+    background-size: 350px;
+    background-position-y: bottom;
+  }
+}
+
+@media (max-width: 500px) {
+  .dash-page {
+    .text-section {
+      .heading {
+        &-1 {
+          font-size: 2rem;
+        }
+        &-3 {
+          color: var(--text-primary);
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .dash-page {
+    background-image: none;
+  }
+}
