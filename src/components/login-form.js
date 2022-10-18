@@ -38,7 +38,7 @@ function login() {
   const user = document.querySelector(`#user`);
   const pass = document.querySelector(`#pass`);
 
-  if (user.value == "admin" && pass.value == "pass") {
+  if (user.value == "admin" && pass.value == "admin") {
     localStorage.setItem("logado", 1);
     location.reload();
     return;

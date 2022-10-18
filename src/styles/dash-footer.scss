@@ -24,7 +24,8 @@
   width: 100%;
   background-color: var(--dark-gray);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
 
   .actions {
     display: flex;
@@ -43,7 +44,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 
     color: var(--text-light);
 
@@ -68,6 +68,7 @@
   .window-info {
     color: var(--text-light);
     max-width: 700px;
+
     width: 100%;
     text-align: right;
     padding: 0 10px;
@@ -91,7 +92,8 @@
     }
 
     .window-info {
-      max-width: 50% !important;
+      max-width: 75% !important;
+      text-align: center;
       margin: auto;
 
       p {
@@ -100,7 +102,7 @@
     }
 
     .refresh-box {
-      max-width: 50%;
+      max-width: 45%;
       margin: 10px 0;
       padding: 0 10px;
 
