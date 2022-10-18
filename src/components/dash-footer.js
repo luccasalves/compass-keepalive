@@ -2,7 +2,7 @@ import { ButtonApp } from "./button";
 import { TextApp } from "./text";
 
 export function DashFooter() {
-  let counter = 601;
+  let counter = 11;
   const footer = document.createElement("footer");
   const actions = document.createElement("div");
   const refreshInfoBox = document.createElement("div");

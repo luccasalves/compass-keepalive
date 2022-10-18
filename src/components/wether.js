@@ -25,13 +25,20 @@ export function WeatherApp() {
 async function getWether(lat, lon) {
   let url = `http://api.weatherapi.com/v1/current.json?key=3e756b6080f247079c9125141221310&q=${lat},${lon}&lang=pt`;
   return await axios.get(url).then((response) => {
-    console.log(response);
     return {
-      icon: response.data.current.condition.icon,
-      condition: response.data.current.condition.text,
-      tempCelsius: response.data.current.temp_c,
-      region: response.data.location.region,
-      city: response.data.location.tz_id,
+      icon: response.data.current.condition.icon
+        ? response.data.current.condition.icon
+        : "",
+      condition: response.data.current.condition.text
+        ? response.data.current.condition.text
+        : "",
+      tempCelsius: response.data.current.temp_c
+        ? response.data.current.temp_c
+        : "",
+      region: response.data.location.region
+        ? response.data.location.region
+        : "",
+      city: response.data.location.tz_id ? response.data.location.tz_id : "",
     };
   });
 }
