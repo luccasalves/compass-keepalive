@@ -30,6 +30,7 @@ function watchInput(id) {
 
   if (document.querySelector(`#${id}`).value.length == 0) {
     i.classList.remove("animation-icon");
+    document.querySelector(`#${id}`).classList.remove("warning");
   }
 }
 
@@ -42,6 +43,8 @@ function login() {
     location.reload();
     return;
   }
+  document.querySelector("#user").classList.add("warning");
+  document.querySelector("#pass").classList.add("warning");
 
   msgError.textContent = "Ops, usuário ou senha inválidos. Tente novamente!";
 }
